@@ -1,5 +1,4 @@
 # Databricks notebook source
-
 # % pip install -e ..
 # %restart_python
 
@@ -8,6 +7,7 @@
 # sys.path.append(str(Path.cwd().parent / 'src'))
 
 # COMMAND ----------
+
 from loguru import logger
 import yaml
 import sys
@@ -33,6 +33,11 @@ filepath ="../data/Loan_default.csv"
 df = pd.read_csv(filepath)
 
 # COMMAND ----------
+
+print(df.head())
+
+# COMMAND ----------
+
 # Load the house prices dataset
 
 data_processor = DataProcessor(df, config, spark)
@@ -50,6 +55,7 @@ logger.info("Training set shape: %s", X_train.shape)
 logger.info("Test set shape: %s", X_test.shape)
 
 # COMMAND ----------
+
 # Save to catalog
 logger.info("Saving data to catalog")
 data_processor.save_to_catalog(X_train, X_test)
@@ -57,4 +63,3 @@ data_processor.save_to_catalog(X_train, X_test)
 # Enable change data feed (only once!)
 logger.info("Enable change data feed")
 data_processor.enable_change_data_feed()
-# COMMAND ----------
