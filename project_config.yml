@@ -1,0 +1,43 @@
+prd:
+  catalog_name: mlops_prd
+  schema_name: medhamhe
+acc:
+  catalog_name: mlops_acc
+  schema_name: medhamhe
+dev:
+  catalog_name: mlops_dev
+  schema_name: medhamhe
+
+experiment_name_basic: /Shared/loan-default-basic
+experiment_name_custom: /Shared/loan-default-custom
+experiment_name_fe: /Shared/loan-default-fe
+
+parameters:
+  learning_rate: 0.01
+  n_estimators: 1000
+  max_depth: 6
+
+
+num_features:
+  - Age
+  - Income
+  - LoanAmount
+  - LoanTerm
+  - CreditScore
+  - MonthsEmployed
+  - NumCreditLines
+  - InterestRate
+  - DTIRatio
+
+
+cat_features:
+  - Education
+  - EmploymentType
+  - MaritalStatus
+  - HasMortgage
+  - HasDependents
+  - LoanPurpose
+  - HasCoSigner
+  - LoanID
+
+target: Default
