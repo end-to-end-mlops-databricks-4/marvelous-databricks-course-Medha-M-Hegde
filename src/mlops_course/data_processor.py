@@ -61,7 +61,7 @@ class DataProcessor:
 
         # Extract target and relevant features
         target = self.config.target
-        relevant_columns = cat_features + num_features + [target] 
+        relevant_columns = cat_features + num_features + [target] + ["LoanID"]
         self.df = self.df[relevant_columns]
         self.df["LoanID"] = self.df["LoanID"].astype("str")
 
