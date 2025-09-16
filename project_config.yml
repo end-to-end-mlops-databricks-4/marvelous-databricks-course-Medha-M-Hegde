@@ -38,6 +38,5 @@ cat_features:
   - HasDependents
   - LoanPurpose
   - HasCoSigner
-  - LoanID
 
 target: Default
