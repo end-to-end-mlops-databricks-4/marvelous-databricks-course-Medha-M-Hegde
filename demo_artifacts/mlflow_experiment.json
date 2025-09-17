@@ -1,0 +1,16 @@
+{
+    "_experiment_id": "2637438610431310",
+    "_name": "/Shared/loan-default-demo",
+    "_artifact_location": "dbfs:/databricks/mlflow-tracking/2637438610431310",
+    "_lifecycle_stage": "active",
+    "_tags": {
+        "mlflow.experimentKind": "custom_model_development",
+        "mlflow.ownerId": "3490127718293854",
+        "repository_name": "end-to-end-mlops-databricks-4/marvelous-databricks-course-Medha-M-Hegde",
+        "mlflow.experiment.sourceName": "/Shared/loan-default-demo",
+        "mlflow.ownerEmail": "medhamhegde95@gmail.com",
+        "mlflow.experimentType": "MLFLOW_EXPERIMENT"
+    },
+    "_creation_time": 1758096412669,
+    "_last_update_time": 1758098043105
+}
