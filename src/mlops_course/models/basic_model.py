@@ -12,6 +12,7 @@ catalog_name, schema_name → Database schema names for Databricks tables.
 import mlflow
 import numpy as np
 import pandas as pd
+
 # from lightgbm import LGBMRegressor
 from lightgbm import LGBMClassifier
 from loguru import logger
@@ -20,8 +21,9 @@ from mlflow.data.dataset_source import DatasetSource
 from mlflow.models import infer_signature
 from pyspark.sql import SparkSession
 from sklearn.compose import ColumnTransformer
+
 # from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 
@@ -136,11 +138,11 @@ class BasicModel:
         mlflow.set_experiment(self.experiment_name)
         with mlflow.start_run(tags=self.tags) as run:
             self.run_id = run.info.run_id
-            
+
             # Predict probabilities and classes
             y_pred_proba = self.pipeline.predict_proba(self.X_test)
             y_pred = self.pipeline.predict(self.X_test)
-            
+
             # --- 1. Evaluate classification metrics ---
             accuracy = accuracy_score(self.y_test, y_pred)
             precision = precision_score(self.y_test, y_pred)
@@ -170,17 +172,17 @@ class BasicModel:
             dataset = mlflow.data.from_spark(
                 self.train_set_spark,
                 table_name=f"{self.catalog_name}.{self.schema_name}.train_set",
-                version=self.data_version,)
+                version=self.data_version,
+            )
             mlflow.log_input(dataset, context="training")
-        
+
             # Log the model specifically for LightGBM
             mlflow.sklearn.log_model(
                 sk_model=self.pipeline,
                 artifact_path="lightgbm-classifier-model-loan-default",
                 signature=signature,
                 # registered_model_name="loan-default-basic-model" # Optional: Register to Model Registry
-                )
-
+            )
 
     def register_model(self) -> None:
         """Register model in Unity Catalog."""

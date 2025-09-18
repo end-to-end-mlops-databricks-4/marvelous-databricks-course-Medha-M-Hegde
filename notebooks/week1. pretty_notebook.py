@@ -8,11 +8,11 @@
 
 # COMMAND ----------
 
-from loguru import logger
-import yaml
-import sys
-from pyspark.sql import SparkSession
+
 import pandas as pd
+import yaml
+from loguru import logger
+from pyspark.sql import SparkSession
 
 from mlops_course.config import ProjectConfig
 from mlops_course.data_processor import DataProcessor
@@ -27,7 +27,7 @@ logger.info(yaml.dump(config, default_flow_style=False))
 spark = SparkSession.builder.getOrCreate()
 
 # filepath = "../data/data.csv"
-filepath ="../data/Loan_default.csv"
+filepath = "../data/Loan_default.csv"
 
 # Load the data
 df = pd.read_csv(filepath)

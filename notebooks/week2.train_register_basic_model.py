@@ -1,14 +1,14 @@
 # Databricks notebook source
 
+import os
+
 import mlflow
+from dotenv import load_dotenv
 from pyspark.sql import SparkSession
 
 from mlops_course.config import ProjectConfig, Tags
 from mlops_course.models.basic_model import BasicModel
-
-from dotenv import load_dotenv
 from mlops_course.utils import is_databricks
-import os
 
 # COMMAND ----------
 # If you have DEFAULT profile and are logged in with DEFAULT profile,
@@ -44,11 +44,11 @@ basic_model.log_model_classifier()
 # Search for all runs in the specified experiment and filter by tag.
 # Do not add `[0]` to the end of this line.
 runs_df = mlflow.search_runs(
-    experiment_names=["/Shared/loan-default-basic"], 
+    experiment_names=["/Shared/loan-default-basic"],
     filter_string="tags.branch='week2'",
     # Sort the runs by the desired metric (F1-score) in descending order.
     # The name of the metric here must match exactly what you logged.
-    order_by=["metrics.f1_score DESC"]
+    order_by=["metrics.f1_score DESC"],
 )
 
 # Check if any runs were found
@@ -56,12 +56,12 @@ if not runs_df.empty:
     # Now that the DataFrame is sorted, the first row is the best run.
     best_run_id = runs_df.iloc[0].run_id
     print(f"The run_id of the best model (by F1-score) is: {best_run_id}")
-    
+
     # You can also access other information about the best run
     best_run_info = runs_df.iloc[0]
     print("Information about the best run:")
     print(best_run_info)
-    
+
 else:
     print("No runs found with the specified criteria.")
 
