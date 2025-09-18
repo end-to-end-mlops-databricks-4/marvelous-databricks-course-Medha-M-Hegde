@@ -88,7 +88,7 @@ def test_column_selection(sample_data: pd.DataFrame, config: ProjectConfig, spar
     processor = DataProcessor(pandas_df=sample_data, config=config, spark=spark_session)
     processor.preprocess()
 
-    expected_columns = config.cat_features + config.num_features + [config.target, "LoanId"]
+    expected_columns = config.cat_features + config.num_features + [config.target, "LoanID"]
     assert set(processor.df.columns) == set(expected_columns)
 
 
