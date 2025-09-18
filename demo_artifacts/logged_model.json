@@ -1,0 +1,28 @@
+{
+    "artifact_location": "dbfs:/databricks/mlflow-tracking/2637438610431319/logged_models/m-6d9545ec17d6458d847c0a9767b93148/artifacts",
+    "creation_timestamp": 1758100586608,
+    "experiment_id": "2637438610431319",
+    "last_updated_timestamp": 1758100603584,
+    "metrics": [],
+    "model_id": "m-6d9545ec17d6458d847c0a9767b93148",
+    "model_type": "",
+    "name": "lightgbm-pipeline-model",
+    "params": {
+        "learning_rate": "0.01",
+        "max_depth": "6",
+        "model_type": "LightGBM with preprocessing",
+        "n_estimators": "1000"
+    },
+    "source_run_id": "49814a93c82d4355bd62b66f38297c88",
+    "status": 2,
+    "status_message": "",
+    "tags": {
+        "mlflow.databricks.cluster.id": "0917-085151-gs9hfg6h-v2n",
+        "mlflow.loggedModel.artifactLocation": "dbfs:/databricks/mlflow-tracking/2637438610431319/logged_models/m-6d9545ec17d6458d847c0a9767b93148/artifacts",
+        "mlflow.loggedModel.name": "lightgbm-pipeline-model",
+        "mlflow.source.name": "c:\\Medhas\\MLOps\\loan-default-pred\\marvelous-databricks-course-Medha-M-Hegde\\.venv\\Lib\\site-packages\\ipykernel_launcher.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.artifacts.spn": "/WorkspaceInternal/Mlflow/Artifacts/2637438610431319/LoggedModels/m-6d9545ec17d6458d847c0a9767b93148/",
+        "mlflow.user": "medhamhegde95@gmail.com"
+    }
+}

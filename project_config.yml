@@ -1,0 +1,52 @@
+prd:
+  catalog_name: mlops_prd
+  schema_name: medhamhe
+acc:
+  catalog_name: mlops_acc
+  schema_name: medhamhe
+dev:
+  catalog_name: mlops_dev
+  schema_name: medhamhe
+
+experiment_name_basic: /Shared/loan-default-basic
+experiment_name_custom: /Shared/loan-default-custom
+experiment_name_fe: /Shared/loan-default-fe
+
+# parameters:
+#   learning_rate: 0.01
+#   n_estimators: 1000
+#   max_depth: 6
+
+parameters:
+  objective: binary # Use 'multiclass' for more than two classes
+  n_estimators: 500 # A good starting point for the number of trees
+  learning_rate: 0.05 # A moderate learning rate; adjust based on 'n_estimators'
+  metric: auc # Use 'binary_logloss' or 'auc' for binary classification
+  num_leaves: 31 # The main parameter for controlling tree complexity
+  max_depth: -1 # No limit; works well with `num_leaves`
+  colsample_bytree: 0.8 # Fraction of features considered for each tree
+  subsample: 0.8 # Fraction of data sampled for each tree
+  random_state: 42 # Ensures reproducibility
+  n_jobs: -1 # Uses all available CPU cores
+
+num_features:
+  - Age
+  - Income
+  - LoanAmount
+  - LoanTerm
+  - CreditScore
+  - MonthsEmployed
+  - NumCreditLines
+  - InterestRate
+  - DTIRatio
+
+cat_features:
+  - Education
+  - EmploymentType
+  - MaritalStatus
+  - HasMortgage
+  - HasDependents
+  - LoanPurpose
+  - HasCoSigner
+
+target: Default
