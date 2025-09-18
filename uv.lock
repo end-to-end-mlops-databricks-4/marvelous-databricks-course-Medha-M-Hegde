@@ -886,6 +886,14 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
+ci = [
+    { name = "databricks-connect" },
+    { name = "ipykernel" },
+    { name = "pre-commit" },
+    { name = "pyspark" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+]
 dev = [
     { name = "databricks-connect" },
     { name = "ipykernel" },
@@ -903,8 +911,10 @@ test = [
 requires-dist = [
     { name = "cffi", specifier = "==1.17.1" },
     { name = "cloudpickle", specifier = "==3.1.1" },
+    { name = "databricks-connect", marker = "extra == 'ci'", specifier = ">=16.0,<17" },
     { name = "databricks-connect", marker = "extra == 'dev'", specifier = ">=16.0,<17" },
     { name = "databricks-sdk", specifier = "==0.55.0" },
+    { name = "ipykernel", marker = "extra == 'ci'", specifier = ">=6.29.5,<7" },
     { name = "ipykernel", marker = "extra == 'dev'", specifier = ">=6.29.5,<7" },
     { name = "lightgbm", specifier = "==4.6.0" },
     { name = "loguru", specifier = "==0.7.3" },
@@ -912,18 +922,22 @@ requires-dist = [
     { name = "numpy", specifier = "==1.26.4" },
     { name = "pandas", specifier = "==2.3.0" },
     { name = "pip", marker = "extra == 'dev'", specifier = ">=25.0.1,<26" },
+    { name = "pre-commit", marker = "extra == 'ci'", specifier = ">=4.1.0,<5" },
     { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=4.1.0,<5" },
     { name = "pre-commit", marker = "extra == 'test'", specifier = ">=4.1.0,<5" },
     { name = "pyarrow", specifier = "==17.0.0" },
     { name = "pydantic", specifier = "==2.11.7" },
+    { name = "pyspark", marker = "extra == 'ci'", specifier = ">=3.4.0,<4" },
     { name = "pyspark", marker = "extra == 'test'", specifier = ">=3.4.0,<4" },
+    { name = "pytest", marker = "extra == 'ci'", specifier = ">=8.0.0,<9" },
     { name = "pytest", marker = "extra == 'test'", specifier = ">=8.0.0,<9" },
+    { name = "pytest-cov", marker = "extra == 'ci'", specifier = ">=5.0.0,<6" },
     { name = "pytest-cov", marker = "extra == 'test'", specifier = ">=5.0.0,<6" },
     { name = "python-dotenv", specifier = "==1.1.1" },
     { name = "scikit-learn", specifier = "==1.7.0" },
     { name = "scipy", specifier = "==1.16.0" },
 ]
-provides-extras = ["dev", "test"]
+provides-extras = ["dev", "test", "ci"]
 
 [[package]]
 name = "nest-asyncio"
