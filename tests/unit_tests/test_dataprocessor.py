@@ -2,12 +2,11 @@
 
 import pandas as pd
 import pytest
-from tests.conftest import CATALOG_DIR
-
 from pyspark.sql import SparkSession
 
 from mlops_course.config import ProjectConfig
 from mlops_course.data_processor import DataProcessor
+from tests.conftest import CATALOG_DIR
 
 
 def test_data_ingestion(sample_data: pd.DataFrame) -> None:
@@ -157,4 +156,3 @@ def test_save_to_catalog_succesfull(
     # Assert
     assert spark_session.catalog.tableExists(f"{config.catalog_name}.{config.schema_name}.train_set")
     assert spark_session.catalog.tableExists(f"{config.catalog_name}.{config.schema_name}.test_set")
-
