@@ -40,7 +40,6 @@ num_features:
   - InterestRate
   - DTIRatio
 
-
 cat_features:
   - Education
   - EmploymentType

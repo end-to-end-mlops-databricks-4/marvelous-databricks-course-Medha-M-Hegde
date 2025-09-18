@@ -53,7 +53,7 @@ def test_column_transformations(sample_data: pd.DataFrame, config: ProjectConfig
     processor.preprocess()
 
     # assert "GarageYrBlt" not in processor.df.columns
-    assert processor.df["LoanId"].dtype == "object"
+    assert processor.df["LoanID"].dtype == "object"
     assert processor.df["HasCoSigner"].dtype == "category"
 
 
