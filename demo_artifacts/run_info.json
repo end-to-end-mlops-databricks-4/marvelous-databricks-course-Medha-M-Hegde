@@ -1,0 +1,40 @@
+{
+    "info": {
+        "artifact_uri": "dbfs:/databricks/mlflow-tracking/2637438610431310/c2091ddb69bb405a8591607ae7d9823b/artifacts",
+        "end_time": 1758098745696,
+        "experiment_id": "2637438610431310",
+        "lifecycle_stage": "active",
+        "run_id": "c2091ddb69bb405a8591607ae7d9823b",
+        "run_name": "loan_default-demo-run",
+        "start_time": 1758098745217,
+        "status": "FINISHED",
+        "user_id": ""
+    },
+    "data": {
+        "metrics": {
+            "metric1": 1.0,
+            "metric2": 2.0
+        },
+        "params": {
+            "type": "demo"
+        },
+        "tags": {
+            "branch": "week2",
+            "git_sha": "1234567890abcd",
+            "mlflow.note.content": "demo run for loan default prediction",
+            "mlflow.runColor": "#e57439",
+            "mlflow.runName": "loan_default-demo-run",
+            "mlflow.source.name": "c:\\Medhas\\MLOps\\loan-default-pred\\marvelous-databricks-course-Medha-M-Hegde\\.venv\\Lib\\site-packages\\ipykernel_launcher.py",
+            "mlflow.source.type": "LOCAL",
+            "mlflow.user": "medhamhegde95@gmail.com",
+            "mlflow.artifacts.spn": "/WorkspaceInternal/Mlflow/Artifacts/2637438610431310/Runs/c2091ddb69bb405a8591607ae7d9823b/"
+        }
+    },
+    "inputs": {
+        "model_inputs": [],
+        "dataset_inputs": []
+    },
+    "outputs": {
+        "model_outputs": []
+    }
+}
